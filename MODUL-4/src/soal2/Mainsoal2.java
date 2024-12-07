@@ -10,25 +10,31 @@ public class Mainsoal2 {
                 Pilih jenis hewan yang ingin diinputkan:
                 1 = Kucing
                 2 = Anjing
-                Masukkan pilihan:""");
+                Masukkan pilihan: """);
         int pilihan = in.nextInt();
         in.nextLine();
         inputOutput(pilihan, in);
     }
+
     static private void inputOutput(int pilihan, Scanner in) {
-        System.out.print("Nama hewan peliharaan : ");
+        System.out.print("Nama hewan peliharaan: ");
         String nama = in.nextLine();
-        System.out.print("Ras : ");
+        System.out.print("Ras: ");
         String ras = in.nextLine();
-        System.out.print("Warna Bulu : ");
+        System.out.print("Warna Bulu: ");
         String warnaBulu = in.nextLine();
+
         if (pilihan == 1) {
             Kucing kucing = new Kucing(ras, nama, warnaBulu);
             System.out.println();
             kucing.displayDetailKucing();
         } else if (pilihan == 2) {
+            System.out.print("Berapa banyak kemampuan yang ingin dimasukkan? ");
+            int jumlahKemampuan = in.nextInt();
+            in.nextLine(); // Consume newline
+
             ArrayList<String> kemampuanList = new ArrayList<>();
-            for (int i = 0; i < 3; i++) {
+            for (int i = 0; i < jumlahKemampuan; i++) {
                 System.out.print("Kemampuan " + (i + 1) + ": ");
                 String kemampuan = in.nextLine().trim();
                 if (!kemampuan.isEmpty()) {
@@ -38,6 +44,7 @@ public class Mainsoal2 {
                     break;
                 }
             }
+
             String[] kemampuanArray = kemampuanList.toArray(new String[0]);
             Anjing anjing = new Anjing(ras, nama, warnaBulu, kemampuanArray);
             System.out.println();
