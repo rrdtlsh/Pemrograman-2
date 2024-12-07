@@ -31,7 +31,7 @@ public class Mainsoal2 {
         } else if (pilihan == 2) {
             System.out.print("Berapa banyak kemampuan yang ingin dimasukkan? ");
             int jumlahKemampuan = in.nextInt();
-            in.nextLine(); // Consume newline
+            in.nextLine();
 
             ArrayList<String> kemampuanList = new ArrayList<>();
             for (int i = 0; i < jumlahKemampuan; i++) {
