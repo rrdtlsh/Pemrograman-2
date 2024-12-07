@@ -1,5 +1,6 @@
 package soal2;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Mainsoal2 {
@@ -26,11 +27,23 @@ public class Mainsoal2 {
             System.out.println();
             kucing.displayDetailKucing();
         } else if (pilihan == 2) {
-            System.out.print("Memiliki kemampuan : ");
-            String[] kemampuan = in.nextLine().split(", ");
-            Anjing anjing = new Anjing(ras, nama, warnaBulu, kemampuan);
+            ArrayList<String> kemampuanList = new ArrayList<>();
+            for (int i = 0; i < 3; i++) {
+                System.out.print("Kemampuan " + (i + 1) + ": ");
+                String kemampuan = in.nextLine().trim();
+                if (!kemampuan.isEmpty()) {
+                    kemampuanList.add(kemampuan);
+                } else {
+                    System.out.println("Input kosong, hentikan pengisian lebih awal.");
+                    break;
+                }
+            }
+            String[] kemampuanArray = kemampuanList.toArray(new String[0]);
+            Anjing anjing = new Anjing(ras, nama, warnaBulu, kemampuanArray);
             System.out.println();
             anjing.displayDetailAnjing();
+        } else {
+            System.out.println("Pilihan tidak valid.");
         }
     }
 }
