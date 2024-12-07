@@ -10,7 +10,6 @@ public class Anjing extends HewanPeliharaan{
     public void displayDetailAnjing(){
         super.display();
         System.out.println("Memiliki warna bulu : "+warnaBulu);
-        System.out.println("Warna Bulu: " + warnaBulu);
-        System.out.println("Kemampuan: " + String.join(" ", kemampuan));
+        System.out.println("Memiliki kemampuan: " + String.join(" ", kemampuan));
   }
 }
