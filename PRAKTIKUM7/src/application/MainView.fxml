@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<TabPane xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Controllerprak7">
+    <tabs>
+        <!-- Tab Data Pelanggan -->
+        <Tab text="Data Pelanggan">
+            <AnchorPane>
+                <VBox spacing="10" AnchorPane.bottomAnchor="10" AnchorPane.leftAnchor="10" AnchorPane.rightAnchor="10" AnchorPane.topAnchor="10">
+                    <HBox spacing="10">
+                        <VBox spacing="5">
+                            <Label text="Nama" />
+                     <TextField fx:id="namaField" promptText="Masukkan Nama" />
+                        </VBox>
+                        <VBox spacing="5">
+                            <Label text="Email" />
+                            <TextField fx:id="emailField" promptText="Masukkan Email" />
+                        </VBox>
+                        <VBox spacing="5">
+                            <Label text="Telepon" />
+                            <TextField fx:id="teleponField" promptText="Masukkan Telepon" />
+                        </VBox>
+                    </HBox>
+                    <HBox spacing="10">
+                        <Button fx:id="addPelanggan" onAction="#handleAddPelanggan" text="Add" />
+                        <Button fx:id="editPelanggan" onAction="#handleEditPelanggan" text="Edit" />
+                        <Button fx:id="deletePelanggan" onAction="#handleDeletePelanggan" text="Delete" />
+                    </HBox>
+                    <TableView fx:id="pelangganTable">
+                        <columns>
+                            <TableColumn fx:id="namaColumn" prefWidth="333.59998166561127" text="Nama" />
+                            <TableColumn fx:id="emailColumn" prefWidth="321.6000061035156" text="Email" />
+                            <TableColumn fx:id="teleponColumn" prefWidth="243.99993896484375" text="Telepon" />
+                        </columns>
+                    </TableView>
+                </VBox>
+            </AnchorPane>
+        </Tab>
+
+        <!-- Tab Data Buku -->
+        <Tab text="Data Buku">
+            <AnchorPane>
+                <VBox spacing="10" AnchorPane.bottomAnchor="10" AnchorPane.leftAnchor="10" AnchorPane.rightAnchor="10" AnchorPane.topAnchor="10">
+                    <HBox spacing="10">
+                        <VBox spacing="5">
+                            <Label text="Judul" />
+                            <TextField fx:id="judulField" promptText="Masukkan Judul Buku" />
+                        </VBox>
+                        <VBox spacing="5">
+                            <Label text="Penulis" />
+                            <TextField fx:id="penulisField" promptText="Masukkan Penulis" />
+                        </VBox>
+                        <VBox spacing="5">
+                            <Label text="Harga" />
+                            <TextField fx:id="hargaField" promptText="Masukkan Harga" />
+                        </VBox>
+                        <VBox spacing="5">
+                            <Label text="Stok" />
+                            <TextField fx:id="stokField" promptText="Masukkan Stok" />
+                        </VBox>
+                    </HBox>
+                    <HBox spacing="10">
+                        <Button fx:id="addBuku" onAction="#handleAddBuku" text="Add" />
+                        <Button fx:id="editBuku" onAction="#handleEditBuku" text="Edit" />
+                        <Button fx:id="deleteBuku" onAction="#handleDeleteBuku" text="Delete" />
+                    </HBox>
+                    <TableView fx:id="bukuTable">
+                        <columns>
+                            <TableColumn fx:id="judulColumn" prefWidth="173.5999755859375" text="Judul" />
+                            <TableColumn fx:id="penulisColumn" prefWidth="328.8000183105469" text="Penulis" />
+                            <TableColumn fx:id="hargaColumn" prefWidth="209.59994506835938" text="Harga" />
+                            <TableColumn fx:id="stokColumn" prefWidth="190.4000244140625" text="Stok" />
+                        </columns>
+                    </TableView>
+                </VBox>
+            </AnchorPane>
+        </Tab>
+
+        <!-- Tab Data Penjualan -->
+        <Tab text="Data Penjualan">
+            <AnchorPane>
+                <VBox spacing="10" AnchorPane.bottomAnchor="10" AnchorPane.leftAnchor="10" AnchorPane.rightAnchor="10" AnchorPane.topAnchor="10">
+                    <HBox spacing="10">
+                        <VBox spacing="5">
+                            <Label text="Nama Pelanggan" />
+                            <ComboBox fx:id="pelangganComboBox" promptText="Pilih Pelanggan" />
+                        </VBox>
+                        <VBox spacing="5">
+                            <Label text="Judul Buku" />
+                            <ComboBox fx:id="bukuComboBox" promptText="Pilih Buku" />
+                        </VBox>
+                        <VBox spacing="5">
+                            <Label text="Jumlah" />
+                            <TextField fx:id="jumlahField" promptText="Masukkan Jumlah" />
+                        </VBox>
+                        <VBox spacing="5">
+                            <Label text="Tanggal" />
+                            <DatePicker fx:id="tanggalPicker" onAction="#handletanggal" />
+                        </VBox>
+                    </HBox>
+                    <HBox spacing="10">
+                        <Button fx:id="addPenjualan" onAction="#handleAddPenjualan" text="Add" />
+                        <Button fx:id="editPenjualan" onAction="#handleEditPenjualan" text="Edit" />
+                        <Button fx:id="deletePenjualan" onAction="#handleDeletePenjualan" text="Delete" />
+                    </HBox>
+                    <TableView fx:id="penjualanTable">
+                        <columns>
+                            <TableColumn fx:id="pelangganColumn" prefWidth="172.80001866817474" text="ID_Pelanggan" />
+                            <TableColumn fx:id="bukuColumn" prefWidth="119.19998168945312" text="ID_Buku" />
+                            <TableColumn fx:id="jumlahColumn" prefWidth="217.60006713867188" text="Jumlah" />
+                            <TableColumn fx:id="totalHargaColumn" prefWidth="199.20001220703125" text="Total Harga" />
+                            <TableColumn fx:id="tanggalColumn" prefWidth="192.79998779296875" text="Tanggal" />
+                        </columns>
+                    </TableView>
+                </VBox>
+            </AnchorPane>
+        </Tab>
+    </tabs>
+</TabPane>
